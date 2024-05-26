@@ -17,14 +17,14 @@ int registro(){
 	
 	FILE*file; //cria o  arquivo
 	file=fopen(arquivo,"w");
-	fprintf(file,"\nCPF: %s",cpf); //salva o vqlor da vari·vel
+	fprintf(file,"\nCPF: %s",cpf); //salva o vqlor da vari√°vel
 	fclose(file); //fecha o arquivo
 
 	printf("Digite o nome a ser cadastrado: ");
 	scanf("%s",nome);
 	
 	file=fopen(arquivo,"a");
-	fprintf(file,"\nnome: %s ",nome); //uma forma de salvar no arquivo, para quando ser colsultado n„o ficar com a informaÁ„o jogada
+	fprintf(file,"\nnome: %s ",nome); //uma forma de salvar no arquivo, para quando ser colsultado n√£o ficar com a informa√ß√£o jogada
 	fclose(file);
 	
 	printf("Digite o sobrenome a ser cadastrado: ");
@@ -40,7 +40,7 @@ int registro(){
 	file=fopen(arquivo,"a");
 	fprintf(file,"\ncargo: %s",cargo);
 	fclose(file);
-	system("pause");//muito importante para n„o dar erro
+	system("pause");//muito importante para n√£o dar erro
 }
 
 int consulta(){
@@ -52,11 +52,11 @@ int consulta(){
 	printf("Digite o cpf a ser consutado: ");
 	scanf("%s",cpf);
 	
-	FILE*file; //abre e lÍ o arquivo cpf
+	FILE*file; //abre e l√™ o arquivo cpf
 	file=fopen(cpf,"r");
 	
 	if(file==NULL){
-		printf("CPF n„o localizado!");
+		printf("CPF n√£o localizado!");
 	}
 	
 	while(fgets(con,200,file)!=NULL){ //mostra o que tem no arquivo
@@ -77,8 +77,8 @@ int deletar(){
 	FILE*file;
 	file=fopen(cpf,"r");
 	
-	if(file==NULL){//validaÁ„o do cpf se est· ou n„o no sistema
-		printf("O usu·rio n„o se encontra no sistema");
+	if(file==NULL){//valida√ß√£o do cpf se est√° ou n√£o no sistema
+		printf("O usu√°rio n√£o se encontra no sistema");
 		system("pause");
 	}
 	else{
@@ -91,7 +91,7 @@ int deletar(){
 
 int main(){
 
-	int opcao=0; //definindo vari·veis
+	int opcao=0; //definindo vari√°veis
 	int a=1;
 	
 	for(a=1;a=1;){
@@ -101,12 +101,13 @@ int main(){
 		setlocale(LC_ALL,"Portuguese");
 
 		printf("Registro de alunos EBAC\n\n"); //Menu
-		printf("Escolha entre as opÁıes 1 a 3 no menu:\n\n");
+		printf("Escolha entre as op√ß√µes 1 a 3 no menu:\n\n");
 		printf("\t1 - Registrar nome\n");
 		printf("\t2 - Consultar nome\n");
-		printf("\t3 - Deletar nome\n\n"); //Fim do menu
+		printf("\t3 - Deletar nome\n\n"); 
+		printf("\t4 - sair do programa");//Fim do menu
 		
-		printf("OpÁ„o:");
+		printf("Op√ß√£o:");
 		scanf("%d",&opcao);
 	
 		system("cls"); //limpar a tela
@@ -123,9 +124,14 @@ int main(){
 			case 3:
 			deletar();
 			break;
+
+			case 4:
+			printf("Obrigado por utilizar o sistema");
+			return 0;
+			break;
 			
 			default:
-			printf("OpÁ„o inv·lida");
+			printf("Op√ß√£o inv√°lida");
 			system("pause");
 			break;
 		
