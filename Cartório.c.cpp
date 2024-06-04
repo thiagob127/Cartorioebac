@@ -40,7 +40,7 @@ int registro(){
 	file=fopen(arquivo,"a");
 	fprintf(file,"\ncargo: %s",cargo);
 	fclose(file);
-	system("pause");//muito importante para n√£o dar erro
+	system("pause");//muito importante para n‚o dar erro
 }
 
 int consulta(){
@@ -52,11 +52,11 @@ int consulta(){
 	printf("Digite o cpf a ser consutado: ");
 	scanf("%s",cpf);
 	
-	FILE*file; //abre e l√™ o arquivo cpf
+	FILE*file; //abre e lÍ o arquivo cpf
 	file=fopen(cpf,"r");
 	
 	if(file==NULL){
-		printf("CPF n√£o localizado!");
+		printf("CPF n„o localizado!");
 	}
 	
 	while(fgets(con,200,file)!=NULL){ //mostra o que tem no arquivo
@@ -77,8 +77,8 @@ int deletar(){
 	FILE*file;
 	file=fopen(cpf,"r");
 	
-	if(file==NULL){//valida√ß√£o do cpf se est√° ou n√£o no sistema
-		printf("O usu√°rio n√£o se encontra no sistema");
+	if(file==NULL){//validaÁ„oo do cpf se est· ou n‚o no sistema
+		printf("O usu·rio n„o se encontra no sistema");
 		system("pause");
 	}
 	else{
@@ -91,23 +91,32 @@ int deletar(){
 
 int main(){
 
-	int opcao=0; //definindo vari√°veis
+	int opcao=0; //definindo vari·veis
 	int a=1;
+	char sendig[10]="a";
+	int comp;
 	
-	for(a=1;a=1;){
+	printf("###CartÛrio EBAC ###\n\n");
+	printf("Login administrador\n\nDigite sua senha: ");
+	scanf("%s",sendig);
+	comp=strcmp(sendig,"admin");
+	
+	if(comp==0){
+	
+		for(a=1;a=1;){
 	
 		system("cls");
 		
 		setlocale(LC_ALL,"Portuguese");
 
 		printf("Registro de alunos EBAC\n\n"); //Menu
-		printf("Escolha entre as op√ß√µes 1 a 3 no menu:\n\n");
+		printf("Escolha entre as opÁıes 1 a 3 no menu:\n\n");
 		printf("\t1 - Registrar nome\n");
 		printf("\t2 - Consultar nome\n");
-		printf("\t3 - Deletar nome\n\n"); 
-		printf("\t4 - sair do programa");//Fim do menu
+		printf("\t3 - Deletar nome\n"); 
+		printf("\t4 - sair do programa\n\n");//Fim do menu
 		
-		printf("Op√ß√£o:");
+		printf("OpÁ„o:");
 		scanf("%d",&opcao);
 	
 		system("cls"); //limpar a tela
@@ -131,10 +140,11 @@ int main(){
 			break;
 			
 			default:
-			printf("Op√ß√£o inv√°lida");
+			printf("OpÁ„o inv·lida");
 			system("pause");
 			break;
 		
+			}
 		}
 	}
 }
